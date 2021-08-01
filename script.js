@@ -5,6 +5,12 @@ function compute()
     var currentYear = new Date().getFullYear();
     var year = currentYear + Number(document.getElementById("years").value);
 
+    if(amount <= 0){
+        alert("The amount must be a positive number");
+        document.getElementById("principal").focus();
+        return;
+    }
+
     var answer = (amount*rate) * (year-currentYear);
 
     var resultText = document.getElementById("result-text");
